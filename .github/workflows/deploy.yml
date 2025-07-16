@@ -35,6 +35,6 @@ jobs:
 
           echo "<== Running App ==>"
           pm2 delete ci-cd-app || true
-          pm2 start server.mjs --name ci-cd-app
+          pm2 start server.mjs --name ci-cd-app-basic
 
           echo "Deployment Complete"
