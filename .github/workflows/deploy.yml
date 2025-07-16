@@ -20,12 +20,11 @@ jobs:
     steps:  
       - name: Auto Deployment
         run: |
-          set -e 
-
-          cd /home/github/CI-CD-Basic
+          set -e
 
           echo "<== Pulling Repo ==>"
           git config --global --add safe.directory .
+          cd /home/github/CI-CD-Basic
           git fetch origin
           git reset --hard origin/main
           git clean -fd
