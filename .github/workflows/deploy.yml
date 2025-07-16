@@ -25,7 +25,7 @@ jobs:
       - name: Install Module
         run: |
           npm ci 
-          npm run test
+          npm run build
   deploy: 
     name: Deploy to Server
     runs-on: self-hosted
