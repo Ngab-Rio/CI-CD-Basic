@@ -34,6 +34,7 @@ jobs:
           npm install
 
           echo "<== Running App ==>"
-          node server.mjs
+          pm2 delete ci-cd-app || true
+          pm2 start server.mjs --name ci-cd-app
 
           echo "Deployment Complete"
