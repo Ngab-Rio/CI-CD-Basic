@@ -8,16 +8,18 @@ on:
     branches:
       - main
 
+
 jobs:
   deploy: 
     name: Deploy to Server
     runs-on: self-hosted
+    default:
+      run:
+        shell: bash  
 
     steps:  
       - name: Auto Deployment
         run: |
-          #!/bin/bash
-          
           set -e 
 
           cd /home/github/CI-CD-Basic
@@ -32,6 +34,6 @@ jobs:
           npm install
 
           echo "<== Running App ==>"
-          npm run dev
+          pm2 start server.mjs --name ci-cd-app
 
           echo "Deployment Complete"

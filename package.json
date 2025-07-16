@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "dev": "node server.mjs",
-    "test": "node server.mjs"
+    "dev": "nodemon server.mjs"
   },
   "keywords": [],
   "author": "",
@@ -12,5 +11,8 @@
   "description": "",
   "dependencies": {
     "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
   }
 }
