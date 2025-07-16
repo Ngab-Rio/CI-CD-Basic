@@ -23,7 +23,7 @@ jobs:
           set -e
 
           echo "<== Pulling Repo ==>"
-          git config --global --add safe.directory .
+          git config --global --add safe.directory /home/github/CI-CD-Basic
           cd /home/github/CI-CD-Basic
           git fetch origin
           git reset --hard origin/main
