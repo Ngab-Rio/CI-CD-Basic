@@ -1,0 +1,55 @@
+name: Implemented CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: Test Code
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Module
+        run: |
+          npm ci 
+          npm run test
+  deploy: 
+    name: Deploy to Server
+    runs-on: self-hosted
+    needs: test
+
+    steps:  
+      - name: Auto Deployment
+        run: |
+          #!/bin/bash
+          
+          set -e 
+
+          cd /home/github/CI-CD-Basic
+
+          echo "<== Pulling Repo ==>"
+          git config --global --add safe.directory .
+          git fetch origin
+          git reset --hard origin/main
+          git clean -fd
+
+          echo "<== Installing Module ==>"
+          npm install
+
+          echo "<== Running App ==>"
+          npm run dev
+
+          echo "Deployment Complete"
