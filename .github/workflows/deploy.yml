@@ -13,7 +13,7 @@ jobs:
   deploy: 
     name: Deploy to Server
     runs-on: self-hosted
-    default:
+    defaults:
       run:
         shell: bash  
 
