@@ -1,18 +1,13 @@
 {
   "name": "ci-cd",
   "version": "1.0.0",
-  "main": "server.js",
+  "type": "module",
+  "main": "server.mjs",
   "scripts": {
-    "dev": "nodemon server.mjs"
+    "dev": "node server.mjs",
+    "start": "node server.mjs"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
     "express": "^5.1.0"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.10"
   }
 }
