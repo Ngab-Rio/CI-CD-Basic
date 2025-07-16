@@ -9,11 +9,10 @@ on:
       - main
 
 jobs:
-  test:
   deploy: 
     name: Deploy to Server
     runs-on: self-hosted
-    
+
     steps:  
       - name: Auto Deployment
         run: |
