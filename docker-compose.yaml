@@ -1,0 +1,11 @@
+services:
+  app-node:
+    container_name: app-node
+    build: .
+    ports:
+      - "3000:80"
+    networks:
+      - app-network
+networks:
+  app-network:
+    driver: bridge
